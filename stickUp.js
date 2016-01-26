@@ -77,14 +77,17 @@ function($) {
 						//console.log(varscroll);
 						if(varscroll > testView){
 							$('.'+itemClass).removeClass(itemHover);
+                            history.pushState(null, null, "#" + $('.menuItem:eq('+i+') a')[0].href.split("#")[1]);
 							$('.'+itemClass+':eq('+i+')').addClass(itemHover);
 						} else if(varscroll < 50){
 							$('.'+itemClass).removeClass(itemHover);
+                            history.pushState(null, null, "#" + $('.menuItem:eq(0) a')[0].href.split("#")[1]);
 							$('.'+itemClass+':eq(0)').addClass(itemHover);
 						}
 					}
 					if(scrollDir == 'down' && varscroll > contentTop[i]-50 && varscroll < contentTop[i]+50) {
 						$('.'+itemClass).removeClass(itemHover);
+                        history.pushState(null, null, "#" + $('.menuItem:eq('+i+') a')[0].href.split("#")[1]);
 						$('.'+itemClass+':eq('+i+')').addClass(itemHover);
 					}
 					if(scrollDir == 'up') {
